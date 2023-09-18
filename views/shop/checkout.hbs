@@ -1,0 +1,91 @@
+<div class="container">
+
+  <div class="container-fluid">
+    <img src="https://freepngimg.com/thumb/shopping_bag/8-2-shopping-bag-png.png" alt="" height="600px" width="110%">
+  </div>
+
+  <div class="payment-form">
+
+    <form id="payment-form" class="checkout-div" action="/checkout" method="post">
+
+      <div class="alert d-none" id="payment-errors">
+
+      </div>
+
+      <h3 >Receipt Summary</h3>
+      <ol class="col-md-11" style="margin-left: -31px; margin-top: 20px; font-size: medium; color: rgb(24, 22, 22);">
+        <li class="list-group-item d-flex ">
+          <div class="ms-2 me-auto">
+           <h5> Total Quantity</h5>
+          </div>
+          <h5><span class="">{{totalQty}}</span></h5>
+        </li>
+        <li class="list-group-item d-flex ">
+          <div class="ms-2 me-auto">
+            <h5>Total Price</h5>
+          </div>
+          <h5><span class="">{{totalPrice}}</span></h5>
+        </li>
+      </ol>
+
+      
+      <hr class="hr-payment">
+
+
+
+      <h3>Payment Information</h3>
+
+      <div class="col-md-11">
+            <label for="inputEmail4" class="form-label">Name</label>
+            <input type="" class="form-control" name="name" id="name" placeholder="steve">
+
+        </div>
+
+        <div class="col-md-11">
+            <label for="inputPassword4" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="steve@gmail.com">
+        </div>
+
+        <div class="col-md-11">
+            <label for="inputAddress" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" name="address" id="mobile">
+        </div>
+
+        <div class="col-md-11">
+            <label for="inputCity" class="form-label">Card Number</label>
+            <input type="text" class="form-control" id="card-number" placeholder="xxxx xxxx xxxx xxx">
+        </div>
+
+        <div class="col-md-11">
+            <label for="inputState" class="form-label">Expiry Month</label>
+            <input type="" class="form-control" id="card-expiry-month">
+        </div>
+      
+        <div class="col-md-5">
+            <label for="inputState" class="form-label">Expiry Year</label>
+            <input type="" class="form-control" id="card-expiry-year">
+        </div>
+
+        <div class="cvv-div col-md-5">
+            <label for="inputZip" class="form-label">Cvv</label>
+            <input type="text" class="cvv-input form-control" id="card-cvc" placeholder="xxx">
+        </div><br>
+
+         <div class="col-12">
+            <button type="submit" class="final-buy-btn">Order</button>
+        </div>
+
+    </form>
+
+  </div>
+
+
+</div>
+
+
+
+
+<script src="https://js.stripe.com/v2/"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script src="/javascripts/checkout.js"></script>

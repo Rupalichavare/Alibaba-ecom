@@ -1,0 +1,54 @@
+<div style="margin-bottom: 20%;">
+<div class="container">
+    <div style="float: left;">
+        <h6>
+            Product
+        </h6>
+        {{# each orders}}
+        {{#each this.items}}
+        {{item.title}}
+        {{/each}}
+        {{/each}}
+    </div>
+
+    <div style="float: left;">
+        <h6>
+            Quantity
+        </h6>
+        {{# each orders}}
+        {{#each this.items}}
+        {{qty}}
+        {{/each}}
+        {{/each}}
+    </div>
+
+    <div style="float: left;">
+        <h6>
+            Image
+        </h6>
+        {{# each orders}}
+        {{#each this.items}}
+        <img src="{{item.image}}" alt="" srcset="" height="50" width="50">
+        {{/each}}
+        {{/each}}
+    </div>
+
+      <div style="float: left;">
+        <h6>
+          Price
+        </h6>
+        {{# each orders}}
+        {{#each this.items}}
+        {{price}}
+        {{/each}}
+        {{/each}}
+    </div>
+
+
+
+
+
+
+
+</div>
+</div>

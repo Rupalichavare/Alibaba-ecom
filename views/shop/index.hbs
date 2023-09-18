@@ -1,0 +1,174 @@
+<style>
+    .alert {
+        animation: wiggle 1.7s linear infinite;
+    }
+
+    /* Keyframes */
+    @keyframes wiggle {
+
+        0%,
+        7% {
+            transform: rotateZ(0);
+        }
+
+        15% {
+            transform: rotateZ(-15deg);
+        }
+
+        20% {
+            transform: rotateZ(10deg);
+        }
+
+        25% {
+            transform: rotateZ(-10deg);
+        }
+
+        30% {
+            transform: rotateZ(6deg);
+        }
+
+        35% {
+            transform: rotateZ(-4deg);
+        }
+
+        40%,
+        100% {
+            transform: rotateZ(0);
+        }
+    }
+
+
+
+    .alert {
+        font-family: Helvetica, Arial, Sans-serif;
+        font-size: 1em;
+        transform-origin: 50% 5em;
+    }
+</style>
+
+
+
+
+<div class="alert alert-success {{# if nomsg}} d-none{{else}}d-block{{/if}}"
+    style="position: absolute;left: 436px;width: 500px;margin-top: 30px;height: 20px;">
+
+    <p style="margin-left: 13px; margin-top: -34px; font-size: 13px; text-align: center;" behavior="" direction="">
+    <h3>
+        {{successmsg}}</h3>
+    </p>
+</div>
+
+
+
+
+<div class="">
+    <img class="fimage"
+        src="https://s.alicdn.com/@img/imgextra/i2/O1CN01ouEKQC1iv8mRiHXTL_!!6000000004474-2-tps-3840-440.png" alt="">
+</div>
+<div class="container">
+    {{!-- info tab start --}}
+    <div class="info-tab card-body">
+        <a href="#" class="card-link-1">Products</a>
+        <a href="#" class="card-link-2">Manufactures</a>
+    </div>
+
+    {{!-- info tab end --}}
+
+    {{!-- search bar start --}}
+    <div class="serach-bar  btn-group">
+        <input class="search-input form-control me-2" type="search" placeholder="What are you looking for ..."
+            aria-label="Search">
+        <button class="search-btn btn btn-outline-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass">&nbsp;&nbsp;</i>Search
+        </button>
+    </div>
+    {{!-- search bar end --}}
+
+
+    <div class="three-image-card">
+        <div class="img-card card-body">
+            <a href="" class="img-card-a1"><img src="https://cdn-icons-png.flaticon.com/512/5733/5733893.png" alt=""
+                    height="50px" width="60px">&nbsp;&nbsp;Cash On Delivery</a>
+            <a href="" class="img-card-a2"> <img
+                    src="https://seeklogo.com/images/F/free-delivery-logo-3F8F5B428D-seeklogo.com.png" alt=""
+                    height="50px" width="60px">&nbsp;&nbsp;Free Delivery</a>
+            <a href="" class="img-card-a3"> <img
+                    src="https://media.istockphoto.com/id/1163150271/vector/box-delivery-easy-returns-return-icon.jpg?s=170667a&w=0&k=20&c=16P9m1vy6a7vnnVnEXRHCUkusuaBM96l3z9duJmlbOI="
+                    alt="" height="50px" width="60px">&nbsp;&nbsp;Easy Return</a>
+
+        </div>
+
+        <br>
+        {{#each products}}
+        {{#each this}}
+        <div class="product-card card">
+            <img src="{{this.image}}" class="card-img-top" alt="..." height="150px" width="50px">
+            <p class="card-title">{{this.title}}</p>
+            <p class="card-text">Rs.{{this.price}}</p>
+            <a href="/addtocart/{{this._id}}" class="add-cart-btn btn-success">Add to cart</a>
+        </div>
+        {{/each}}
+        {{/each}}
+    </div>
+
+    <div class="suppliers">
+        <p>Suppliers by country or region</p>
+
+        <div class="country-tab">
+            <a href=""><img
+                    src="https://cdn.insideflow.com/media/com_easysocial/photos/1/2/fa0e5898646d24ba2009a5258f14fb05_large.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Japan</span>
+            </a>
+            &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/010/870/761/small/american-flag-of-united-states-of-america-png.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>USA</span>
+            </a>
+
+              &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1200px-Flag_of_Italy.svg.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Italy</span>
+                   
+            </a>  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://vectorflags.s3.amazonaws.com/flags/tr-square-01.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Turky</span>
+            </a>  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://www.citypng.com/public/uploads/preview/south-korea-square-flag-button-icon-png-11656411459zitnhuefoc.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>South Korea</span>
+            </a>
+  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://c8.alamy.com/comp/2GYAKM3/a-malaysia-web-icon-rectangle-button-with-clipping-path-3d-illustration-2GYAKM3.jpg"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Malasiya</span>
+            </a>  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://www.countryflags.com/wp-content/uploads/russia-flag-png-large.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Russia</span>
+            </a>  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_the_Romani_people.svg/1200px-Flag_of_the_Romani_people.svg.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Romani</span>
+            </a>  &nbsp;  &nbsp;  &nbsp; 
+              <a href=""><img
+                    src="https://e7.pngegg.com/pngimages/309/446/png-clipart-red-green-white-and-black-flag-art-abu-dhabi-dubai-flag-of-the-united-arab-emirates-national-flag-uae-angle-flag.png"
+                    alt="" height="20px" width="20px">
+                   &nbsp; <span>Dubai</span>
+            </a>
+
+            <a href="/  "><i class="arrow fa-solid fa-arrow-up 2xl"></i></a>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,53 @@
+
+{{#if haserror}}
+{{errormsg}}
+{{/if}}
+
+
+<form class="sign-up-form" action="/user/signup" method="post">
+  {{!-- <p style="padding: 5px; font-size: 20px; color: brown; font-family: 'Times New Roman', Times, serif;"> Sign-Up
+    Form
+  </p> --}}
+  <label for="email">Email Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input required class="signup-input" type="text" name="email" id="email"
+    placeholder="Please enter your  email address."><br><br>
+
+  <label for="password">Login password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input required class="signup-input" type="password" name="password" id="password"
+    placeholder="Set the login password"><br><br>
+
+  <label for="password">Comfirm password:&nbsp;&nbsp;&nbsp;</label>
+  <input required class="signup-input" type="password" name="confirm-password" id="confirm-password"
+    placeholder="Enter the login password again"><br><br>
+
+
+  <label for="name">Full
+    Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input required class="signup-input" type="text" name="name" id="name" placeholder="Enter your full name."><br><br>
+
+  <label
+    for="mobile">Mobile:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input required class="signup-input" type="text" name="mobile" id="mobile"
+    placeholder="Enter your mobile number."><br><br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+  <label class="form-check-label" for="invalidCheck">
+    I agree to (a) <span style="color: rgb(247, 76, 13);"> Free Membership Agreement</span>,
+    (b)<span style="color: rgb(247, 76, 13);"> Terms of Use</span>, and
+    (c)<span style="color: rgb(247, 76, 13);">Privacy Policy.</span> I agree to receive more information from
+    Alibaba.com about its products and services.
+  </label>
+
+
+  <br><br>
+
+
+  <button class="signup-btn">Agree and SignUp</button>
+
+  <br><br>
+  {{!-- <a style="text-decoration: none;  color: rgb(59, 58, 58);
+    text-shadow:2px  2px 2px rgb(177, 145, 145);" href="/user/login">
+    <h7>Already User .Then LogIn</h7>
+  </a> --}}
+</form>

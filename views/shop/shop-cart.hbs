@@ -1,0 +1,72 @@
+{{!-- <h1>cart..................</h1> --}}
+
+<div class="container">
+
+
+
+  {{# if products}}
+  <ol class="list-group list-group-numbered" style="margin-left: 20px; ; margin-top: 70px;">
+    {{# each products}}
+    <li class="list-group-item d-flex justify-content-between align-items-start col-7 ">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{this.item.title}}</div>
+        <h6>Price Rs.{{this.price}}</h6>
+      </div>
+
+      <div class="product-img">
+        <img src="{{this.item.image}}" alt="" style="height: 60px; width: 60px;">
+      </div>
+
+      <div class="action-drop dropdown">
+        <button class="btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Action
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/addbyone/{{this.item._id}}">Add By One</a></li>
+          <li><a class="dropdown-item" href="/reducedbyone/{{this.item._id}}">Reduced By One</a></li>
+          <li><a class="dropdown-item" href="/deleteallitem/{{this.item._id}}">Delete All</a></li>
+        </ul>
+      </div>
+
+      <span class="total-qty-div">Total Qty :{{this.qty}}</span>
+    </li>
+
+
+
+    {{/each}}
+  </ol>
+  <br>
+
+
+  {{!-- checkout btn --}}
+  <a href="/shop/checkout"><button class="buy-btn">Buy</button></a>
+
+
+  <br>
+  <br>
+  <div class="col-md-3">
+    <table class="table" style="font-weight: bold; margin-left: 20px;">
+      <tbody>
+        <tr>
+          <td>Total Product</td>
+          <td>{{totalQty}}</td>
+        </tr>
+        <tr>
+          <td>Total Price</td>
+          <td>{{totalPrice}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+  {{else}}
+  {{!-- <h5>Your Cart Is Empty . . . </h5> --}}
+  <a href="/"><img src="https://wpmet.com/wp-content/uploads/2022/09/EmptyCart_3-Copy.png" alt="" srcset=""
+      height="700px" width="1345x" style="margin-left: -115px;">
+  </a>
+  {{/if}}
+
+</div>
